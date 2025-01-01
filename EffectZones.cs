@@ -76,6 +76,7 @@ public class EffectZones : BaseSettingsPlugin<EffectZonesSettings>
         var entityLists = new List<IEnumerable<Entity>>
         {
             GameController?.EntityListWrapper?.ValidEntitiesByType[EntityType.Effect] ?? [],
+            GameController?.EntityListWrapper?.ValidEntitiesByType[EntityType.MonsterMods] ?? [],
         };
 
         var entityList = entityLists.SelectMany(list => list).ToList();
