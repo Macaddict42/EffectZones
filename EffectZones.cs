@@ -114,6 +114,11 @@ public class EffectZones : BaseSettingsPlugin<EffectZonesSettings>
                 continue;
             }
 
+            if (string.IsNullOrEmpty(baseEntity.Path))
+            {
+                continue;
+            }   
+
             var matchingGroup = Settings.EntityGroups.Content.FirstOrDefault(g => g.PathTemplates.Content.Any(p => IsMatch(p.Value, baseEntity.Path)));
             if (matchingGroup != null)
             {
